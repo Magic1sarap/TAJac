@@ -1,0 +1,82 @@
+<app-navbar></app-navbar>
+
+
+
+<!-- RECENT ARTICLES SECTION -->
+  <!-- RECENT ARTICLES SECTION -->
+  <div class="container">
+    <br>
+    <br>
+    <h1>Recent Articles</h1>
+    <br>
+
+
+    <section class="my-5">
+
+
+
+      <!-- Grid row -->
+      <div class="row" *ngFor="let article of articles">
+
+
+
+        <!-- Grid column -->
+        <div class="col-lg-5">
+          <!-- Featured image -->
+          <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+            <img [src]="article.image" alt="image can't be displayed :(" id="display-image">
+            <a [routerLink]="['/article-showcase', article.header, article.text, article.tag, article.image]">
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+
+        </div>
+        <!-- Grid column -->
+
+
+
+        <!-- Grid column -->
+        <div class="col-lg-7">
+          <!-- Category -->
+          <a class="green-text">
+            <h6 class="font-weight-bold mb-3"><i class="fas fa-utensils pr-2"></i>Food</h6>
+          </a>
+          <!-- Post title -->
+          <h3 class=" mb-3">{{article.header}}</h3>
+          <!-- Excerpt -->
+          <p>{{article.text}}</p>
+          <!-- Post data -->
+          <p><a><strong>{{article.tag}}</strong></a></p>
+
+        
+        </div>
+        <!--End Delete Modal-->
+        <!-- Grid column -->
+
+        <div class="container">
+        <hr id="card-hr" class="my-5">
+      </div>
+      </div>
+      <!-- Grid row -->
+
+    
+
+    </section>
+  </div>
+  <!-- END OF RECENT ARTICLES SECTION -->
+
+<br>
+<br>
+
+<!-- LOAD MORE SECTION-->
+  <div class="row d-flex justify-content-center">
+    <a id="loadMore">Load more articles</a>
+</div>
+<!-- END OF LOADMORE SECTION -->
+
+
+
+<!-- FOOTER SECTION -->
+<app-footer></app-footer>
+<!-- END OF FOOTER SECTION -->

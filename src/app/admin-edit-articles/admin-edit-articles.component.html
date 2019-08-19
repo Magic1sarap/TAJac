@@ -1,0 +1,174 @@
+<!-- ADMIN NAVBAR -->
+<app-admin-navbar></app-admin-navbar>
+<!-- END OF ADMIN NAVBAR -->
+
+
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Admin Dashboard
+
+        </div>
+        <div class="list-group list-group-flush">
+            <a routerLink="/admin-article" class="list-group-item list-group-item-action bg-light">Articles</a>
+            <a href="#" class="list-group-item list-group-item-action bg-light">Article Categories</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="p-5">
+
+            <div class="card">
+
+                <!-- Card content -->
+                <div id="update-card" class="card-body">
+                    <div class="row">
+                        <div id="update-card" class="col-md-6 px-5">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="card-title">
+                                        <a class="nav-link p-0" href="#">
+                                            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg"
+                                                class="rounded-circle z-depth-0" alt="avatar image" height="35">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <p class="mt-2 font-weight-normal">Justin Wallace<span
+                                            class="font-weight-bold mx-2">·</span>
+                                        a day ago <span class="font-weight-bold mx-2">·</span> 1 min read</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div id="update-card" class="col-md-6">
+                            <div class="row mb-2">
+                                <div class="col-md-8">
+                                </div>
+                                <div class="col-md-4 text-right mb-4">
+                                    <button class="mt-2 font-weight-normal btn btn-transparent"><i
+                                            class="fas fa-ellipsis-v"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Header, Text, Tag and Image display -->
+                    <div class="row px-5">
+
+                        <div>
+                            <label for="exampleForm2"></label>
+                            <input placeholder="{{header}}" (input)="onChangeHeaderUpdate($event.target.value)"
+                                type="text" style="font-size: 36px;" class="form-control">
+
+
+                            <div class="form-group shadow-textarea py-4 w-100">
+
+                                <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="10"
+                                    style="width: 100%;"
+                                    (input)="onChangeTextUpdate($event.target.value)">{{text}}</textarea>
+
+                            </div>
+
+                            <div class="container d-flex social p-3">
+
+
+                                <div class="form-group">
+
+                                    <img [src]="image">
+                                    <label for="upload-photo" accept="image/*" typue="file" (input)="onChangeImageUpdate($event.target.value)" ><i class="fas fa-camera p-3"></i></label>
+                                    <!-- <input accept="image/*" [src]="image"
+                                        (change)="changeListenerUpdate($event)" id="upload-photo"> -->
+                                </div>
+
+
+
+                                <a><i class="fas fa-video p-3"></i></a>
+                                <a><i class="fas fa-code p-3"></i></a>
+                            </div>
+                            <label for="exampleForm2"></label>
+                            <input placeholder="{{tag}}" (input)="onChangeTagUpdate($event.target.value)" type="text"
+                                class="form-control">
+                        </div>
+
+
+                        <hr id="card-hr">
+
+                        <div class="container d-flex social p-3">
+                            <a><i class="fab fa-facebook-f mr-5"></i></a>
+                            <a><i class="fab fa-twitter mr-5"></i></a>
+                            <a><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+
+                        <hr class="mb-5" id="card-hr">
+
+                        <div class="row w-100">
+                            <div class="col-md-6">
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <button mdbBtn type="button"
+                                            class="btn btn-outline-default btn-md btn-block">Revert to
+                                            Original</button>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="btn-group col-md-6" role="group">
+                                            <!--Update Modal button-->
+                                            <button type="button" class="btn btn-md btn-light relative waves-light"
+                                                (click)="basicModal.show()" mdbWavesEffect>Update</button>
+
+
+                                            <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1"
+                                                role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-sm" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close pull-right"
+                                                                aria-label="Close" (click)="basicModal.hide()">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body text-center">
+                                                            Confirm Update?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button mdbBtn class="btn btn-danger btn-md"
+                                                                (click)="onSubmit()">Yes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn btn-md btn-default"><i
+                                                class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End of Header, Text, Tag and Image display -->
+                    <div>
+                    </div>
+                </div>
+            </div>
+            <!-- /#page-content-wrapper -->
+        </div>
+        <!-- /#wrapper -->
+    </div>
+
+</div>
+
+
+<!-- FOOTER SECTION -->
+<app-footer></app-footer>
+<!-- END OF FOOTER SECTION -->
