@@ -8,8 +8,8 @@ const ObjectId = require('mongodb').ObjectID;
 
 
 // declare axios for making http requests 
-var clientId = 'xakZxaZTCmu3qkVlPt5DSA';
-var clientSecrect = 'm01J3u8KTbMdO1tRDs37HhVTy-B9M9Y1X0aZ6ESDHpA';
+var clientId = '...';
+var clientSecrect = '...';
 var url = 'http://ssg.apps.deskera.com/rest/v1/company/token?clientid=' + clientId + '&clientsecret=' + clientSecrect;
 var accessToken = router.get('/auth', function (req, res) {
     'http://ssg.apps.deskera.com/rest/v1/company/token?clientid=' + clientId + '&clientsecret=' + clientSecrect;
